@@ -22,7 +22,7 @@
 function output = encryptUpperCaseText(upperCasePlainText, key, options)
     arguments
         upperCasePlainText (1,:) char {mustBeText(upperCasePlainText), mustBeUpperOnly(upperCasePlainText)}
-        key (1,:) char {VigenereHelper.validateKeyLength(upperCasePlainText, key), mustBeText(key)}
+        key (1,:) char {keyLengthValidator(upperCasePlainText, key), mustBeText(key)}
         options.Info (1,1) logical = 0
     end
     % Pre-allocate empty vector

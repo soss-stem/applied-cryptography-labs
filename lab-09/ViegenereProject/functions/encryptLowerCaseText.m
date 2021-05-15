@@ -22,7 +22,7 @@
 function output = encryptLowerCaseText(lowerCasePlainText, key, options)
     arguments
         lowerCasePlainText (1,:) char {mustBeText(lowerCasePlainText), mustBeLowerOnly(lowerCasePlainText)}
-        key (1,:) char {VigenereHelper.validateKeyLength(lowerCasePlainText, key), mustBeText(key)}
+        key (1,:) char {keyLengthValidator(lowerCasePlainText, key), mustBeText(key)}
         options.Info (1,1) logical = 0
     end
     % Pre-allocate empty vector
