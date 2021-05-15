@@ -1,3 +1,0 @@
-function privateKey = generatePa(G)
-
-
