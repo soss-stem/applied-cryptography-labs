@@ -31,21 +31,23 @@
 function output = isWrongCaseInText(text,textCase)
 
 output = false;
-for i = 1 : length(text)
-    
-    if (textCase == "lower")
-        if (isLowerCase(text(i)))
-            output = true;
-            break;
+
+    for i = 1 : length(text)
+
+        if (textCase == "lower")
+            if (isLowerCase(text(i)))
+                output = true;
+                break;
+            end
         end
+
+        if (textCase == "upper")
+            if (isUpperCase(text(i)))
+                output = true;
+                break;
+            end
+        end
+
     end
     
-    if (textCase == "upper")
-        if (isUpperCase(text(i)))
-            output = true;
-            break;
-        end
-    end
-    
-end
 end
