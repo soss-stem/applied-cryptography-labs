@@ -5,7 +5,6 @@ function position = getPosition(letter)
 
 asciiCode = double(letter);
 
-if (asciiCode 
 
 end
 
