@@ -20,11 +20,14 @@
 %   Date-Modified   : May 2021
 
 function output = encryptUpperCaseText(upperCasePlainText, key, options)
+    %% Argument validation
     arguments
         upperCasePlainText (1,:) char {mustBeText(upperCasePlainText), mustBeUpperOnly(upperCasePlainText)}
         key (1,:) char {keyLengthValidator(upperCasePlainText, key), mustBeText(key)}
         options.Info (1,1) logical = 0
     end
+    %
+    %% This is the main functionality
     % Pre-allocate empty vector
     cypherTextUpperCodes = zeros(1, length(upperCasePlainText));
 
@@ -36,12 +39,13 @@ function output = encryptUpperCaseText(upperCasePlainText, key, options)
     end
 
     output = char(cypherTextUpperCodes);
-
+    %
+    %% This is just to check optional argument
     if (options.Info)
         fprintf("Plain text : %s\n", upperCasePlainText);
         fprintf("Key text : %s\n", key);
         fprintf("Cypher text : %s\n", char(cypherTextUpperCodes));
     end
-    
+    %
 end
 % End of function
