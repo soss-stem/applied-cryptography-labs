@@ -1,0 +1,2 @@
+- name: Run MATLAB Command
+  uses: matlab-actions/run-command@v1.0.1
